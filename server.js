@@ -2,7 +2,7 @@ const path=require('path'),http=require('http'),crypto=require('crypto'),express
 const {Server}=require('socket.io');const {Chess}=require('chess.js');
 const {createGame,getGame,snapshot,removePlayer,cleanName}=require('./game');
 const app=express(),server=http.createServer(app),io=new Server(server);const PORT=process.env.PORT||10000;
-app.use(express.static(path.join(__dirname,'..','public')));
+app.use(express.static(__dirname));
 app.get('/health',(_req,res)=>res.json({ok:true,app:'xadrez-online'}));
 const roomId=()=>crypto.randomBytes(3).toString('hex').toUpperCase();
 const getCurrent=s=>s.data.roomId?getGame(s.data.roomId):null;
