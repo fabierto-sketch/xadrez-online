@@ -1,9 +1,19 @@
+
 {
   "name": "xadrez-online",
   "version": "1.0.0",
   "description": "Jogo de xadrez online com sala privada, chat e câmara",
-  "main": "server/server.js",
-  "scripts": {"start": "node server/server.js", "test": "node --test server/*.test.js"},
-  "engines": {"node": ">=20"},
-  "dependencies": {"chess.js": "^1.4.0", "express": "^4.21.2", "socket.io": "^4.8.1"}
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test game.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "chess.js": "^1.4.0",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
 }
